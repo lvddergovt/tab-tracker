@@ -9,15 +9,17 @@
         </v-toolbar>
 
         <div class="pl-4 pr-4 pt-2 pb-2">
-          <v-text-field type="email" label="Email" v-model="email" color="teal lighten-4"></v-text-field>
-          <br>
-          <v-text-field type="password" label="Password" v-model="password" color="teal lighten-4"></v-text-field>
-          <br>
-          <div class="error" v-html="error"/>
-          <br>
-          <v-btn color="teal lighten-2" type="button" @click="register" light>
-            Register
-          </v-btn>
+          <form autocomplete="off">
+            <v-text-field type="email" label="Email" v-model="email" color="teal lighten-4"></v-text-field>
+            <br>
+            <v-text-field type="password" label="Password" v-model="password" color="teal lighten-4"></v-text-field>
+            <br>
+            <div class="error" v-html="error"/>
+            <br>
+            <v-btn color="teal lighten-2" type="submit" @click="register" light>
+              Register
+            </v-btn>
+          </form>
         </div>
       </div>
     </v-flex>
@@ -37,10 +39,12 @@ export default {
   methods: {
     async register () {
       try {
-        await AuthenticationService.register({
+        const response = await AuthenticationService.register({
           email: this.email,
           password: this.password
         })
+        this.$store.dispatch('setToken', response.data.token)
+        this.$store.dispatch('setUser', response.data.user)
       } catch (error) {
         this.error = error.response.data.error
       }
