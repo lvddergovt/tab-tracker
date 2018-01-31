@@ -1,17 +1,19 @@
 <template>
-  <panel title="Register">
-    <form autocomplete="off">
-      <v-text-field type="email" label="Email" v-model="email" color="teal lighten-4"></v-text-field>
-      <br>
-      <v-text-field type="password" label="Password" v-model="password" color="teal lighten-4"></v-text-field>
-      <br>
-      <div class="error" v-html="error"/>
-      <br>
-      <v-btn color="teal lighten-2" type="submit" @click="register" light>
-        Register
-      </v-btn>
-    </form>
-  </panel>
+  <v-flex sm10 md6 offset-sm1 offset-md3>
+    <panel title="Register">
+      <form autocomplete="off">
+        <v-text-field type="email" label="Email" v-model="email" color="teal lighten-4"></v-text-field>
+        <br>
+        <v-text-field type="password" label="Password" v-model="password" color="teal lighten-4"></v-text-field>
+        <br>
+        <div class="error" v-html="error"/>
+        <br>
+        <v-btn color="teal lighten-2" type="submit" @click="register" light>
+          Register
+        </v-btn>
+      </form>
+    </panel>
+  </v-flex>
 </template>
 
 <script>
