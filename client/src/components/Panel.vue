@@ -5,6 +5,7 @@
         <v-toolbar-title>
           {{ title }}
         </v-toolbar-title>
+        <slot name="action"></slot>
       </v-toolbar>
 
       <div class="pl-4 pr-4 pt-2 pb-2">

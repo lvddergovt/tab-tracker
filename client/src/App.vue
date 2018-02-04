@@ -23,7 +23,11 @@ export default {
 </script>
 
 <style>
-  #app {
-    padding-top: 48px;
-  }
+#app {
+  padding-top: 48px;
+}
+
+.danger-alert {
+  color: red;
+}
 </style>
