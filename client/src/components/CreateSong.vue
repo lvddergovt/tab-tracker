@@ -12,8 +12,8 @@
     </v-flex>
     <v-flex xs12 sm7 offset-sm1>
       <panel title="Song Structure">
-        <v-text-field type="text" label="Tab" multi-line v-model="song.tab" color="teal lighten-4"></v-text-field>
-        <v-text-field type="text" label="Lyrics" multi-line v-model="song.lyrics" color="teal lighten-4"></v-text-field>
+        <v-text-field type="text" required :rules="[required]" label="Tab" multi-line v-model="song.tab" color="teal lighten-4"></v-text-field>
+        <v-text-field type="text" required :rules="[required]" label="Lyrics" multi-line v-model="song.lyrics" color="teal lighten-4"></v-text-field>
       </panel>
       <div class="danger-alert" v-if="error">
         {{ error }}

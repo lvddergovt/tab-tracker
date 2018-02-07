@@ -7,7 +7,7 @@
       <div v-for="song in songs" class="song" :key="song.id">
 
         <v-layout>
-          <v-flex sm-6>
+          <v-flex sm6>
             <div class="song-title">
               {{ song.title }}
             </div>
@@ -21,7 +21,7 @@
             View
             </v-btn>
           </v-flex>
-          <v-flex sm-6>
+          <v-flex sm6>
             <img class="album-image" :src="song.albumImageUrl">
           </v-flex>
         </v-layout>
